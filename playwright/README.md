@@ -107,23 +107,18 @@ This document outlines the steps to set up an automated testing framework using 
   npm test
   ```
 
-- You can run tests with different configurations using environment variables:
-  - **Run in headless mode (default)**:
-      ```bash
-      npm test
-      ```
-  - **Run in headful mode (visible browser)**:
-      ```bash
-      set HEADLESS=false && npm test
-      ```
-  - **Run with a different browser** (e.g., Firefox):
-      ```bash
-      set BROWSER=firefox && npm test
-      ```
-  - **Set a custom number of workers**:
-      ```bash
-      set WORKERS=2 && npm test
-      ```
+- Run tests in headed browsers
+    ```bash
+    npx playwright test --headed
+    ```
+- Run all the tests against a specific project
+    ```bash
+    npx playwright test --project=chromium
+    ```
+- Disable parallelization
+    ```bash
+    npx playwright test --workers=1
+    ```
 
 ## Additional Tips:
 - **Continuous Integration**: Consider integrating your test suite with a CI/CD tool like GitHub Actions, GitLab CI, or CircleCI to automate test runs on code changes.
