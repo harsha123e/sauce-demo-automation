@@ -44,7 +44,7 @@ jobs:
         node-version: '20'
 
     - name: Run Playwright Tests
-      run: npm test
+      run: npx playwright test
       working-directory: playwright/sauce-demo-automation
 
     - name: Upload Test Report
