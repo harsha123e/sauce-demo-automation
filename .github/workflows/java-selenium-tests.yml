@@ -29,5 +29,5 @@ jobs:
       working-directory: java-selenium/sauce-demo-automation
 
     - name: Run Selenium Tests
-      run: mvn test
+      run: mvn test -Dheadless=true
       working-directory: java-selenium/sauce-demo-automation
