@@ -11,9 +11,7 @@ public class BaseTest {
             options.addArguments("--headless");
             options.addArguments("--disable-gpu");
             options.addArguments("--window-size=1920,1200");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--remote-allow-origins=*");
+            options.addArguments("--disable-extensions");
         }
 
         return options;
