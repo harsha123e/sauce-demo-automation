@@ -29,5 +29,15 @@ jobs:
       working-directory: java-selenium/sauce-demo-automation
 
     - name: Run Selenium Tests
-      run: mvn test -Dheadless=true
+      run: mvn test
       working-directory: java-selenium/sauce-demo-automation
+
+    - name: Upload Test Results
+      if: always()  # Ensures the step runs even if the previous steps fail
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-results
+        path: |
+          java-selenium/sauce-demo-automation/target/surefire-reports/*.xml
+          java-selenium/sauce-demo-automation/target/surefire-reports/*.txt
+          java-selenium/sauce-demo-automation/target/surefire-reports/*.html
