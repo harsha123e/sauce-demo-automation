@@ -33,3 +33,9 @@ jobs:
     - name: Run Playwright Tests
       run: npm test
       working-directory: playwright/sauce-demo-automation
+
+    - name: Upload Test Report
+      uses: actions/upload-artifact@v3
+      with:
+        name: playwright-report
+        path: playwright/sauce-demo-automation/playwright-report
