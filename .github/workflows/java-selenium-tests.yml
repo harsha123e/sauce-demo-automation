@@ -34,7 +34,7 @@ jobs:
 
     - name: Upload Test Results
       if: always()  # Ensures the step runs even if the previous steps fail
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: test-results
         path: |
