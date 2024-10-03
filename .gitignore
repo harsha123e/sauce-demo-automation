@@ -1,0 +1,17 @@
+# Node modules
+**/node_modules/
+# Playwright reports
+**/playwright-report/
+**/test-results
+# Cypress screenshots and videos
+**/cypress/screenshots/
+**/cypress/videos/
+# Java target directory
+**/target/
+# IDE configurations
+.vscode/
+# Logs
+*.log
+# OS specific files
+.DS_Store
+Thumbs.db

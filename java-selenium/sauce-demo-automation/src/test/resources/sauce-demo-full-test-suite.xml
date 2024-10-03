@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SauceDemoAutomationSuite" parallel="tests" thread-count="5">
+    <test name="User Authentication Tests">
+        <classes>
+            <class name="com.saucedemo.automation.tests.UserAuthenticationTests"/>
+        </classes>
+    </test>
+    <test name="Product Interaction Tests">
+        <classes>
+            <class name="com.saucedemo.automation.tests.ProductInteractionTests"/>
+        </classes>
+    </test>
+    <test name="Shopping Cart Management Tests">
+        <classes>
+            <class name="com.saucedemo.automation.tests.ShoppingCartManagementTests"/>
+        </classes>
+    </test>
+    <test name="Checkout Process Tests">
+        <classes>
+            <class name="com.saucedemo.automation.tests.CheckoutProcessTests"/>
+        </classes>
+    </test>
+    <test name="Product Details Verification Tests">
+        <classes>
+            <class name="com.saucedemo.automation.tests.ProductDetailsVerificationTests"/>
+        </classes>
+    </test>
+</suite>

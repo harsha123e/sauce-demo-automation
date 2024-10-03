@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.saucedemo.automation</groupId>
+  <artifactId>sauce-demo-automation</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>sauce-demo-automation</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <selenium.version>4.10.0</selenium.version>
+    <testng.version>7.7.0</testng.version>
+    <webdrivermanager.version>5.5.0</webdrivermanager.version>
+  </properties>
+
+  <dependencies>
+    <!-- Selenium Java Dependency -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>${selenium.version}</version>
+    </dependency>
+    <!-- TestNG Dependency -->
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>${testng.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- Web Driver Manager Dependency -->
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>${webdrivermanager.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M5</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>src/test/resources/sauce-demo-full-test-suite.xml</suiteXmlFile>
+          </suiteXmlFiles>
+          <parallel>tests</parallel>
+          <threadCount>5</threadCount>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
