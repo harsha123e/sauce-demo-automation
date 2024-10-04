@@ -1,19 +1,17 @@
 package com.saucedemo.automation.tests;
 
-import com.saucedemo.automation.pages.LoginPage;
-import com.saucedemo.automation.pages.HomePage;
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import com.saucedemo.automation.pages.HomePage;
+import com.saucedemo.automation.pages.LoginPage;
 
 public class UserAuthenticationTests extends BaseTest {
     private WebDriver driver;
@@ -23,8 +21,7 @@ public class UserAuthenticationTests extends BaseTest {
 
     @BeforeMethod
     public void setup() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(getChromeOptions());
+        driver = getDriver();
         driver.get("https://www.saucedemo.com/");
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
