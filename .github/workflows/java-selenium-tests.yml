@@ -22,16 +22,29 @@ jobs:
         java-version: '11'
         distribution: 'temurin'  # Commonly used distributions are 'temurin', 'adopt', or 'zulu'
 
-    - name: Install Chrome
+    - name: Install Chrome and dependencies
       run: |
+          # Install necessary dependencies for Chrome
+          sudo apt-get update
+          sudo apt-get install -y \
+              wget \
+              libnss3 \
+              libgconf-2-4 \
+              libxi6 \
+              libxrender1 \
+              libxrandr2 \
+              libxss1 \
+              libgtk-3-0
+          
+          # Download and install Chrome
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo apt install ./google-chrome-stable_current_amd64.deb -y
           
     - name: Set permissions for Chrome and Chromedriver
-      run:  |
+      run: |
           sudo chmod +x "/usr/bin/chromedriver"
           sudo chmod +x "/usr/bin/google-chrome"
-          
+
     - name: Build with Maven
       run: mvn clean install
       working-directory: ./java-selenium/sauce-demo-automation
