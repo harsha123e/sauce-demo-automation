@@ -1,4 +1,4 @@
-name: Java Selenium Workflow
+name: Java Maven Workflow
 
 on:
   push:
@@ -20,24 +20,25 @@ jobs:
       uses: actions/setup-java@v4
       with:
         java-version: '11'
-        
+        distribution: 'temurin'  # Commonly used distributions are 'temurin', 'adopt', or 'zulu'
+
     - name: Install Maven
       run: sudo apt-get install -y maven
 
     - name: Build with Maven
       run: mvn clean install
-      working-directory: java-selenium/sauce-demo-automation
+      working-directory: ./java-selenium/sauce-demo-automation
 
-    - name: Run Selenium Tests
+    - name: Run Tests
       run: mvn test
-      working-directory: java-selenium/sauce-demo-automation
+      working-directory: ./java-selenium/sauce-demo-automation
 
     - name: Upload Test Results
-      if: always()  # Ensures this step runs even if the previous steps fail
+      if: always()  # Ensures this step runs even if previous steps fail
       uses: actions/upload-artifact@v4
       with:
         name: test-results
         path: |
-          java-selenium/sauce-demo-automation/target/surefire-reports/*.xml
-          java-selenium/sauce-demo-automation/target/surefire-reports/*.txt
-          java-selenium/sauce-demo-automation/target/surefire-reports/*.html
+          ./java-selenium/sauce-demo-automation/target/surefire-reports/*.xml
+          ./java-selenium/sauce-demo-automation/target/surefire-reports/*.txt
+          ./java-selenium/sauce-demo-automation/target/surefire-reports/*.html
