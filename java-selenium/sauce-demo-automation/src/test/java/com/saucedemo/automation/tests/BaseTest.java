@@ -12,8 +12,8 @@ public class BaseTest {
             options.addArguments("--headless");
             options.addArguments("--disable-gpu");
 //          options.addArguments("--window-size=1920,1200");
-            options.add_argument("--no-sandbox");
-            options.add_argument("--disable-dev-shm-usage");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
         }
 
         return options;
