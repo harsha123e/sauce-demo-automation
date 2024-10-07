@@ -4,6 +4,7 @@ This document outlines the steps to set up an automated testing framework using 
 
 ## 1. **Plan Test Cases with Steps**
 - Clearly outline the test scenarios, expected outcomes, and detailed steps for each test case. This will help maintain clarity and direction while writing the tests.
+- [Test Plan](../README.md)
 
 ## 2. **Install Node.js**
 - Ensure you have Node.js installed. Verify the installation using the following command:
