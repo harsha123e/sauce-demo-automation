@@ -4,6 +4,7 @@ To implement your automated testing project for the SauceDemo website using Cypr
 
 ## 1. **Plan Test Cases with Steps**
 - Clearly outline your test scenarios, expected outcomes, and detailed steps for each test case to maintain clarity and direction.
+- [Test Plan](../README.md)
 
 ## 2. **Install Node.js and npm**
 - Ensure you have Node.js and npm installed. Verify the installations using the following commands:
